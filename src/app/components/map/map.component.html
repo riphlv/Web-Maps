@@ -1,0 +1,33 @@
+
+<div class="panel">
+  <form (submit)="addMapData()">
+      <div>
+        <input class="formField" type="text"  placeholder="Name of this place" [(ngModel)]="input_data.name" name="name">
+      </div>
+      <div>
+        <input class="formField" type="text"  placeholder="Info about this place" [(ngModel)]="input_data.info" name="info">
+      </div>
+      <div>
+        <label>{{savedCoords}}</label>
+      </div>
+      <button  class="formBtn" type="submit">Add</button>
+    </form>
+
+  <app-get-map-data></app-get-map-data>
+
+  <hr>
+</div>
+<div class="map" 
+  leaflet 
+  [leafletOptions]="options" 
+  [leafletLayers]="layers" 
+  [leafletFitBounds]="fitBounds"
+  [(leafletZoom)]="zoom"
+  [(leafletCenter)]="center"
+  (leafletMapReady)="onMapReady($event)" 
+  (leafletClick)="mouseClick($event)" 
+  (leafletMouseMove)="mouseMove($event)"
+  (leafletMouseOver)="mouseOver($event)"
+  (leafletDoubleClick)="test($event)"
+  >
+</div>

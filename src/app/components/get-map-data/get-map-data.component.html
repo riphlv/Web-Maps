@@ -1,0 +1,20 @@
+<app-panel [data]="selectedData"></app-panel>
+<table>
+  <tr>
+    <!-- <th>ID</th> -->
+    <!-- <th>Name</th> -->
+    <!-- <th>Info</th> -->
+    <th>Lat</th>
+    <th>Lng</th>
+    <th>Actions</th>
+  </tr>
+<tr *ngFor="let data of mapData" [class.selected]="data === selectedData" (click)="onSelect(data)">
+  <!-- <th>{{data._id}}</th> -->
+  <!-- <td>{{data.name}}</td> -->
+  <!-- <td>{{data.info}}</td> -->
+  <td>{{data.lat.toFixed(4)}}</td>
+  <td>{{data.lng.toFixed(4)}}</td>
+  <td><a [routerLink]="['../edit',data._id]" class= "editBtn">Edit</a></td>
+  <td><a (click)="deleteMapData(data._id)" class="deleteBtn">Delete</a></td>
+</tr>
+</table>

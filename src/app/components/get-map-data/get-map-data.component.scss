@@ -1,0 +1,34 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size:12px;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px;
+    max-width:20px;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  a{
+    color:black;
+    //padding:6px 16px;
+    border:1px;
+    text-decoration: none;
+    padding:5px 11px;
+    width:100%;
+  }
+  .editBtn:hover{
+    border-color:green;
+    border-style:solid;
+    padding:5px 10px;
+    cursor:pointer;
+  }
+  .deleteBtn:hover{
+    border-color:red;
+    border-style:solid;
+    padding:5px 10px;
+    cursor: pointer;
+  }

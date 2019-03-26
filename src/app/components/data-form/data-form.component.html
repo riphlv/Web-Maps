@@ -1,0 +1,48 @@
+<app-get-map-data></app-get-map-data>
+
+<div class="formBody">
+  <form [formGroup]="angForm" novalidate>
+    <label>ID HERE</label>
+      <div>
+        <label>Name: </label>
+        <input 
+        class="formField" 
+        type="text" 
+        formControlName="data_name" 
+        #data_name
+        placeholder="Name of this place">
+      </div>
+      <div>
+        <label>Info: </label>
+        <input 
+        class="formField" 
+        type="text" 
+        formControlName="data_info" 
+        #data_info
+        placeholder="Info about this place">
+      </div>
+      <div>
+        <label>Lat: </label>
+        <input 
+        class="formField" 
+        type="text" 
+        formControlName="data_lat" 
+        #data_lat
+        placeholder="ex. 56.9560">
+      </div>
+      <div>
+        <label>Lng: </label>
+        <input 
+        class="formField" 
+        type="text" 
+        formControlName="data_lng"
+        #data_lng
+        placeholder="ex. 24.0601">
+      </div>
+      <div>
+          <button (click)="addMapData(data_name.value,data_info.value,data_lat.value,data_lng.value)" 
+          class="formBtn" 
+          type="submit">Add</button>
+      </div>
+  </form>
+</div>
