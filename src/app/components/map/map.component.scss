@@ -1,17 +1,21 @@
+$mobile-width:640px;
+
 .map {
-    height:100%;
-    padding: 0;
-  }
-.panel{
-  font-size:12px;
-  overflow:scroll;
-    float:left;
-    width:100%;
-    height:100%;
-    min-width:200px;
-    max-width:300px;
-    background-color:white;
-    //background-color:rgb(246, 246, 246);
+  height: 100%;
+  padding: 0;
+}
+
+.panel {
+  display: block;
+  font-size: 12px;
+  overflow-y: scroll;
+  float: left;
+  width: 300px;
+  height: 100%;
+  /* min-width: 200px; */
+  //max-width: 300px;
+  background-color: white;
+  resize: horizontal;
 }
 
 
@@ -20,43 +24,87 @@
   color: white;
 }
 
-  form {
-    background-color: rgba(255, 255, 255, 0.6);
-    /* border-radius: 10px; */
-    padding: 5px;
-    min-width: 200px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    border:0px;
-    border-bottom:1px;
-    border-color:lightgray;
-    border-style:solid;
-    /* visibility: hidden; */
-  }
-  
-  label {
-    text-align: center;
+form {
+  background-color: rgba(255, 255, 255, 0.6);
+  /* border-radius: 10px; */
+  padding: 5px;
+  min-width: 200px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px;
+  border-bottom: 1px;
+  border-color: lightgray;
+  border-style: solid;
+  /* visibility: hidden; */
+}
+
+label {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+
+}
+
+.formField {
+
+  text-align: center;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+.formBtn {
+  text-align: center;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  background-color: rgb(32, 146, 253);
+  color: white;
+}
+
+.hideBtn {
+  width: 20px;
+  height: 100%;
+  background-color: #0078FF;
+  float: left;
+  border:0px;
+  border-top:1px;
+  border-style:solid;
+  border-color:white;
+  cursor: pointer;
+  //
+  text-align:center;
+
+}
+
+/* 
+.hideBtn>label {
+  text-align:center;
+  color:black;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+@media (max-width:$mobile-width) {
+  .panel {
     width: 100%;
-    margin: 0;
-  
+    max-width: $mobile-width;
   }
-  .formField {
-    
-    text-align: center;
-    border-radius: 5px;
+
+  .map {
     width: 100%;
-    padding: 5px 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
   }
-    .formBtn{
-        text-align: center;
-    border-radius: 5px;
+
+  .hideBtn {
     width: 100%;
-    padding: 5px 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    background-color:rgb(32, 146, 253);
-    color:white;
-    }
+    height: 20px;
+  }
+}

@@ -24,6 +24,21 @@ serverRoutes.route('/get').get(function(req,res){
     });
 });
 
+serverRoutes.route('/get/:name').get(function(req,res){
+    let name = req.params.name;
+    // Tries to find in DB for matching name, either in name or info
+    MapModel.find({ $or:[
+        {name: {$regex: new RegExp(name, "i")}},
+        {info: {$regex: new RegExp(name, "i")}}
+    ]},function(err,data){
+        if(err){
+            console.log(err);
+        }else{
+            res.json(data);
+        }
+    });
+});
+
 serverRoutes.route('/edit/:id').get(function(req,res){
     let id = req.params.id;
     MapModel.findById(id,function(err,data){

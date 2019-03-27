@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output ,EventEmitter } from '@angular/core';
 import { CommonService } from 'src/app/services/common.service';
 import { MapData } from '../map/mapData';
 import { MapComponent } from '../map/map.component';
@@ -10,8 +10,10 @@ import { MapComponent } from '../map/map.component';
   providers:[ MapComponent ]
 })
 export class GetMapDataComponent implements OnInit {
+  @Output() gotoLocation = new EventEmitter<MapData>();
   mapData : MapData[];
   selectedData: MapData;
+  goToData:MapData;
 
   
   constructor(private commonService:CommonService,
@@ -20,7 +22,6 @@ export class GetMapDataComponent implements OnInit {
   ngOnInit() {
     this.commonService.getMapData().subscribe((data:MapData[])=>{
       this.mapData = data;
-      /* console.log(data); */
     });
   }
   deleteMapData(id){
@@ -29,9 +30,16 @@ export class GetMapDataComponent implements OnInit {
     });
   }
 
+  onSearchSelect($event){
+    this.selectedData = $event;
+    this.onSelect(this.selectedData);
+  }
   onSelect(data: MapData): void {
-    this.mapComponent.moveToMapPos(data.lat,data.lng);
     this.selectedData = data;
+  }
+  goToLocation($event){
+    this.goToData = $event;
+    this.gotoLocation.emit($event);
   }
 
 }

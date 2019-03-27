@@ -1,0 +1,17 @@
+.panelis{
+    height:100px;
+    overflow-y:scroll;
+}
+span{
+    font-weight:bold;
+}
+.goToBtn{
+    text-align: center;
+    border-radius: 5px;
+    width: 50px;
+    padding: 3px 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    background-color: rgb(32, 146, 253);
+    color: white;
+  }

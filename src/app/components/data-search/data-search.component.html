@@ -1,0 +1,14 @@
+<div id="search-component">
+  <input #searchBox id="search-box" placeholder="Search.." (input)="search(searchBox.value)" />
+  <ul class="search-result">
+    <li *ngFor="let data of mapData$ | async" >
+      <div class="listBtn" [class.selected]="data === selectedData" (click)="onSelect(data)">
+          <a >{{data.name}}</a>
+      </div>
+      
+      <!-- <a routerLink="/detail/{{data.id}}">
+        {{data.name}}
+      </a> -->
+    </li>
+  </ul>
+</div>

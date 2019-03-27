@@ -16,6 +16,7 @@ import { CommonService } from './services/common.service';
 import { DataFormComponent } from './components/data-form/data-form.component';
 import { GetMapDataComponent } from './components/get-map-data/get-map-data.component';
 import { EditMapDataComponent } from './components/edit-map-data/edit-map-data.component';
+import { DataSearchComponent } from './components/data-search/data-search.component';
 
 // Izveidojam routes
 const appRoutes: Routes = [ 
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     AboutComponent,
     DataFormComponent,
     GetMapDataComponent,
-    EditMapDataComponent
+    EditMapDataComponent,
+    DataSearchComponent
   ],
   imports: [
     BrowserModule,

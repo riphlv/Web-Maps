@@ -1,15 +1,15 @@
-<div *ngIf="data" >
+<div class="panelis" *ngIf="data" >
   <div>
-    <span>Name: {{data.name}}</span><br>
+    <span>Name:</span> {{data.name}}<br>
   </div>
   <div>
-    <span>Info: {{data.info}}</span><br>
+    <span>Info:</span> {{data.info}}<br>
   </div>
   <div>
-      <span>Lat: {{data.lat}}</span><br>
+      <span>Lat:</span> {{data.lat}}<br>
   </div>
   <div>
-      <span>Lng: {{data.lng}}</span><br>
+      <span>Lng:</span> {{data.lng}}<br>
   </div>
-
+  <button class="goToBtn" type="button" (click)="goToLocation(data)">Go</button>
 </div>

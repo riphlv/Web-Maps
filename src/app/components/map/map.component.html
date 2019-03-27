@@ -1,5 +1,6 @@
 
-<div class="panel">
+<div class="hideBtn" (click)="this.isVisible = !this.isVisible"></div>
+<div class="panel" *ngIf="!this.isVisible" >
   <form (submit)="addMapData()">
       <div>
         <input class="formField" type="text"  placeholder="Name of this place" [(ngModel)]="input_data.name" name="name">
@@ -12,8 +13,11 @@
       </div>
       <button  class="formBtn" type="submit">Add</button>
     </form>
-
-  <app-get-map-data></app-get-map-data>
+    <div>
+      <label>Distance: {{dist.toFixed(4)}} meters</label>
+    </div>
+    <hr>
+  <app-get-map-data (gotoLocation)="goToLocation($event)"></app-get-map-data>
 
   <hr>
 </div>
@@ -28,6 +32,6 @@
   (leafletClick)="mouseClick($event)" 
   (leafletMouseMove)="mouseMove($event)"
   (leafletMouseOver)="mouseOver($event)"
-  (leafletDoubleClick)="test($event)"
+  (leafletMouseDown)="test($event)"
   >
 </div>
